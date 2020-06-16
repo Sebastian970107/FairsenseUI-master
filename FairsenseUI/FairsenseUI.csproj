@@ -125,6 +125,7 @@
     <Compile Include="Controls\WebOfFairsense.xaml.cs">
       <DependentUpon>WebOfFairsense.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converts\StringToDisplay.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
