@@ -61,7 +61,6 @@ namespace FairsenseUI.Controls
             InitChart();
             InitString();
             InitTimer();
-            ProgressBar();
         }
 
         private void InitChart()
@@ -203,41 +202,6 @@ namespace FairsenseUI.Controls
                 SeriesCollection_1[0].Values.Add(y);
             }
 
-        }
-        private void ProgressBar()
-        {
-            Thread thread = new Thread(new ThreadStart(() =>
-            {
-                for (int i = 1; i <= 100; i++)
-                {
-                    this.pb_1.Dispatcher.Invoke(() => this.pb_1.Value = i);
-                    this.tb_1.Dispatcher.Invoke(() => this.tb_1.Text = i + "%");
-                    this.pb_2.Dispatcher.Invoke(() => this.pb_2.Value = i);
-                    this.tb_2.Dispatcher.Invoke(() => this.tb_2.Text = i + "%");
-                    this.pb_3.Dispatcher.Invoke(() => this.pb_3.Value = i);
-                    this.tb_3.Dispatcher.Invoke(() => this.tb_3.Text = i + "%");
-                    this.pb_4.Dispatcher.Invoke(() => this.pb_4.Value = i);
-                    this.tb_4.Dispatcher.Invoke(() => this.tb_4.Text = i + "%");
-                    this.pb_5.Dispatcher.Invoke(() => this.pb_5.Value = i);
-                    this.tb_5.Dispatcher.Invoke(() => this.tb_5.Text = i + "%");
-                    this.pb_6.Dispatcher.Invoke(() => this.pb_6.Value = i);
-                    this.tb_6.Dispatcher.Invoke(() => this.tb_6.Text = i + "%");
-                    this.pb_7.Dispatcher.Invoke(() => this.pb_7.Value = i);
-                    this.tb_7.Dispatcher.Invoke(() => this.tb_7.Text = i + "%");
-                    this.pb_8.Dispatcher.Invoke(() => this.pb_8.Value = i);
-                    this.tb_8.Dispatcher.Invoke(() => this.tb_8.Text = i + "%");
-                    this.pb_9.Dispatcher.Invoke(() => this.pb_9.Value = i);
-                    this.tb_9.Dispatcher.Invoke(() => this.tb_9.Text = i + "%");
-                    this.pb_10.Dispatcher.Invoke(() => this.pb_10.Value = i);
-                    this.tb_10.Dispatcher.Invoke(() => this.tb_10.Text = i + "%");
-                    this.pb_11.Dispatcher.Invoke(() => this.pb_11.Value = i);
-                    this.tb_11.Dispatcher.Invoke(() => this.tb_11.Text = i + "%");
-                    this.pb_12.Dispatcher.Invoke(() => this.pb_12.Value = i);
-                    this.tb_12.Dispatcher.Invoke(() => this.tb_12.Text = i + "%");
-                    Thread.Sleep(200);
-                }
-            }));
-            thread.Start();
         }
 
     }

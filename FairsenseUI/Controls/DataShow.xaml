@@ -7,301 +7,327 @@
              xmlns:local="clr-namespace:FairsenseUI.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="850" d:DesignWidth="580">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="650"></RowDefinition>
-        </Grid.RowDefinitions>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="150"></RowDefinition>
+			<RowDefinition Height="50"></RowDefinition>
+			<RowDefinition Height="650"></RowDefinition>
+		</Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="10">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="280"></ColumnDefinition>
-                    <ColumnDefinition Width="280"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock x:Name="textblock_1" Margin="10" Foreground="Black" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
-                    <Bold><Span FontSize="15" FontFamily="宋体">传感器名称</Span></Bold>
-                </TextBlock>
-                <TextBlock x:Name="textblock_2" Margin="10" Foreground="Black" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" FontSize="14" FontFamily="宋体" Text="{Binding Text}" />
-                <TextBlock x:Name="textblock_3" Margin="10" Foreground="Black" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" FontSize="14" FontFamily="宋体" Text="{Binding Text}" />
-                <TextBlock x:Name="textblock_4" Margin="10" Foreground="Black" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" FontFamily="宋体" Text="告警消息" />
-            </Grid>
-        </StackPanel>
+		<StackPanel Grid.Row="0" Margin="10">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="50"></RowDefinition>
+					<RowDefinition Height="40"></RowDefinition>
+					<RowDefinition Height="40"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="280"></ColumnDefinition>
+					<ColumnDefinition Width="280"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Name="textblock_1" Margin="10" Foreground="Black" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
+					<Bold>
+						<Span FontSize="15" FontFamily="宋体">传感器名称</Span>
+					</Bold>
+				</TextBlock>
+				<TextBlock x:Name="textblock_2" Margin="10" Foreground="Black" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" FontSize="14" FontFamily="宋体" Text="{Binding Text}" />
+				<TextBlock x:Name="textblock_3" Margin="10" Foreground="Black" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" FontSize="14" FontFamily="宋体" Text="{Binding Text}" />
+				<TextBlock x:Name="textblock_4" Margin="10" Foreground="Black" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="14" FontFamily="宋体" Text="告警消息" />
+			</Grid>
+		</StackPanel>
 
 
 
-        <TabControl Grid.Row="2" Margin="10">
-            <TabItem Header="一氧化碳">
-                <StackPanel >
-                    <ScrollViewer Width="530"  Height="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_1}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_1}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+		<TabControl Grid.Row="2" Margin="10">
+			<TabItem Header="一氧化碳">
+				<StackPanel >
+					<ScrollViewer Width="530"  Height="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+							</Grid.RowDefinitions>
+							<Grid Grid.Row="0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_1}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_1}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="秒钟" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="秒钟" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
 
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_1" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_1" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_2}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_2}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_1" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider1" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label1"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider1, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label2" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="1">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_2}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_2}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="辆" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_2" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_2" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_3}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_3}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="辆" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_2" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider2" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label3"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider2, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label4" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="2">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_3}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_3}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_3" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_3" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_4}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="米" Labels="{Binding Labels_4}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_3" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider3" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label5"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider3, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label6" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="3">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_4}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="米" Labels="{Binding Labels_4}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_4" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_4" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_4" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider4" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label7"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider4, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label8" VerticalAlignment="Center"/>
+							</Grid>
 
-                        </Grid>
-                    </ScrollViewer>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="二氧化碳">
-                <StackPanel >
-                    <ScrollViewer Width="530"  Height="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_5}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_5}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+						</Grid>
+					</ScrollViewer>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="二氧化碳">
+				<StackPanel >
+					<ScrollViewer Width="530"  Height="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+							</Grid.RowDefinitions>
+							<Grid Grid.Row="0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_5}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_5}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="秒钟" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="秒钟" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
 
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_5" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_5" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_6}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_6}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_5" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider5" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label9"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider5, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label10" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="1">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_6}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_6}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="辆" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_6" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_6" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_7}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_7}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="辆" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_6" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider6" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label11"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider6, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label12" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="2">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_7}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_7}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_7" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_7" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_8}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="米" Labels="{Binding Labels_8}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_7" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider7" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label13"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider7, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label14" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="3">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_8}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="米" Labels="{Binding Labels_8}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_8" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_8" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_8" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider8" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label15"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider8, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label16" VerticalAlignment="Center"/>
+							</Grid>
 
-                        </Grid>
-                    </ScrollViewer>
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="二氧化硫">
-                <StackPanel >
-                    <ScrollViewer Width="530"  Height="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                                <RowDefinition Height="375"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_9}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_9}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+						</Grid>
+					</ScrollViewer>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="二氧化硫">
+				<StackPanel >
+					<ScrollViewer Width="530"  Height="550" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+								<RowDefinition Height="375"></RowDefinition>
+							</Grid.RowDefinitions>
+							<Grid Grid.Row="0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_9}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_9}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="秒钟" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="秒钟" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
 
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_9" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_9" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_10}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_10}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_9" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider9" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label17"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider9, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label18" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="1">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_10}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_10}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="辆" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_10" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_10" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="2">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_11}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="时间" Labels="{Binding Labels_11}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="辆" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_10" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider10" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label19"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider10, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label20" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="2">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_11}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="时间" Labels="{Binding Labels_11}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_11" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_11" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
-                            <Grid Grid.Row="3">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="300"></RowDefinition>
-                                    <RowDefinition Height="25"></RowDefinition>
-                                    <RowDefinition Height="50"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_12}" Height="250" Width="510" >
-                                    <lvc:CartesianChart.AxisX>
-                                        <lvc:Axis Title="米" Labels="{Binding Labels_12}" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisX>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_11" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider11" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label21"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider11, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label22" VerticalAlignment="Center"/>
+							</Grid>
+							<Grid Grid.Row="3">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="300"></RowDefinition>
+									<RowDefinition Height="25"></RowDefinition>
+									<RowDefinition Height="50"></RowDefinition>
+								</Grid.RowDefinitions>
+								<lvc:CartesianChart Grid.Row="0" Series="{Binding SeriesCollection_12}" Height="250" Width="510" >
+									<lvc:CartesianChart.AxisX>
+										<lvc:Axis Title="米" Labels="{Binding Labels_12}" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisX>
 
-                                    <lvc:CartesianChart.AxisY>
-                                        <lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
-                                    </lvc:CartesianChart.AxisY>
-                                </lvc:CartesianChart>
-                                <TextBlock Grid.Row="1" x:Name="tb_12" Height="23"></TextBlock>
-                                <ProgressBar Grid.Row="2" x:Name="pb_12" Minimum="0" Maximum="100" Height="20" ></ProgressBar>
-                            </Grid>
+									<lvc:CartesianChart.AxisY>
+										<lvc:Axis Title="百分比" FontSize="14"></lvc:Axis>
+									</lvc:CartesianChart.AxisY>
+								</lvc:CartesianChart>
+								<TextBlock Grid.Row="1" x:Name="tb_12" Height="23"></TextBlock>
+								<Slider Grid.Row="2"  Name="slider12" Maximum="100" Minimum="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="100,0,80,0" SmallChange="1" IsSnapToTickEnabled="True"/>
+								<Label Foreground="Black" Grid.Row="2" Content="间隔时间" Height="30" Width="60" HorizontalAlignment="Left" Margin="30,0,0,0" Name="label23"  />
+								<Label Foreground="Black" Grid.Row="2" Content="{Binding ElementName=slider12, Path=Value, UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Height="30" Width="40" HorizontalAlignment="Right" Margin="0,0,20,0" Name="label24" VerticalAlignment="Center"/>
+							</Grid>
 
-                        </Grid>
-                    </ScrollViewer>
-                </StackPanel>
-            </TabItem>
-        </TabControl>
+						</Grid>
+					</ScrollViewer>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
 
-    </Grid>
+	</Grid>
 </UserControl>
